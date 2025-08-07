@@ -14,6 +14,11 @@ export default function Home() {
       description: 'AN INTERACTIVE BUTTON THAT CREATES A COLORFUL CONFETTI EXPLOSION',
       path: '/prototypes/confetti-button'
     },
+    {
+      title: 'FRASIER\'S PIANO',
+      description: 'A SOPHISTICATED INTERACTIVE PIANO WITH ELEGANT FRASIER-INSPIRED DESIGN',
+      path: '/prototypes/frasier-piano'
+    },
     // Add your new prototypes here like this:
     // {
     //   title: 'YOUR NEW PROTOTYPE',
