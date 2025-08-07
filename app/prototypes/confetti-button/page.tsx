@@ -13,10 +13,10 @@ export default function ConfettiButtonPrototype() {
     
     confetti({
       particleCount: 100,
-      spread: 100,
-      origin: { y: 0.6 },
+      spread: 360,
+      origin: { y: 300.0 },
       colors: ['#FF69B4', '#00FFFF', '#9932CC'], // Pink, bright aqua, purple
-      shapes: ['square'], // Keep the square particles for the pixel look
+      shapes: ['circle'], // Keep the square particles for the pixel look
     });
 
     setTimeout(() => setIsAnimating(false), 300);

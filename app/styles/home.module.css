@@ -1,50 +1,324 @@
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 2rem;
+/* BRUTALIST HOMEPAGE STYLES - NO SMOOTH EDGES */
+
+.brutalistContainer {
+  min-height: 100vh;
+  background: #FFFFFF;
+  background-image: 
+    radial-gradient(circle at 1px 1px, #000000 1px, transparent 0);
+  background-size: 20px 20px;
+  color: #000000;
+  font-family: 'Courier New', monospace;
+  padding: 0;
+  margin: 0;
 }
 
-.header {
-  margin-bottom: 2rem;
+/* MASSIVE HEADER WITH JUXTAPOSED FONTS */
+.brutalistHeader {
+  background: #000000;
+  background-image: 
+    radial-gradient(circle at 2px 2px, #FFFFFF 1px, transparent 0),
+    radial-gradient(circle at 8px 8px, #FF0000 1px, transparent 0);
+  background-size: 16px 16px, 32px 32px;
+  color: #FFFFFF;
+  padding: 4rem 2rem 3rem 2rem;
+  text-align: left;
+  border-bottom: 8px solid #FF0000;
+  position: relative;
 }
 
-.header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
+.mainTitle {
+  font-size: clamp(3rem, 12vw, 8rem);
+  font-weight: 900;
+  line-height: 0.8;
+  margin: 0;
+  letter-spacing: -0.05em;
+  text-transform: none;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.card {
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+.titlePart1 {
+  font-family: 'Franklin Gothic Heavy', 'Franklin Gothic', 'Arial Black', sans-serif;
+  color: #FFFF00;
   display: block;
+  text-shadow: 4px 4px 0px #FF0000;
+  font-weight: 900;
 }
 
-.card:hover {
-  background: rgba(0, 0, 0, 0.04);
-  transform: translateY(-2px);
+.titlePart2 {
+  font-family: 'Palatino', 'Palatino Linotype', 'Book Antiqua', serif;
+  color: #00FF00;
+  display: block;
+  margin-left: 2rem;
+  text-shadow: -3px 3px 0px #0000FF;
+  font-weight: 100;
 }
 
-.card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 600;
+.subtitle {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: #FF0000;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+  border: 3px solid #000000;
+  letter-spacing: 0.1em;
 }
 
-.card p {
+/* MAIN CONTENT */
+.brutalistMain {
+  padding: 0;
+}
+
+.divider {
+  background: #000000;
+  background-image: 
+    linear-gradient(45deg, #FFFF00 25%, transparent 25%),
+    linear-gradient(-45deg, #FFFF00 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #FFFF00 75%),
+    linear-gradient(-45deg, transparent 75%, #FFFF00 75%);
+  background-size: 4px 4px;
+  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+  color: #FFFF00;
+  font-family: monospace;
+  font-size: 0.8rem;
+  padding: 1rem;
+  text-align: center;
+  letter-spacing: -0.1em;
+  overflow: hidden;
+}
+
+.sectionTitle {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #000000;
+  background: #FFFF00;
+  background-image: 
+    radial-gradient(circle at 3px 3px, #000000 1px, transparent 0);
+  background-size: 12px 12px;
+  padding: 1rem 2rem;
+  margin: 0;
+  border-top: 5px solid #FF0000;
+  border-bottom: 5px solid #0000FF;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+/* BRUTALIST GRID */
+.brutalistGrid {
+  padding: 2rem;
+  background: #F0F0F0;
+  background-image: 
+    linear-gradient(0deg, #E0E0E0 1px, transparent 1px),
+    linear-gradient(90deg, #E0E0E0 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+/* HARSH PROTOTYPE CARDS */
+.brutalistCard {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 4px solid #000000;
+  margin-bottom: 1rem;
+  padding: 0;
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+  transition: none;
+  box-shadow: 8px 8px 0px #000000;
+}
+
+.brutalistCard:hover {
+  background: #FFFF00;
+  animation: floatAround 2s ease-in-out infinite;
+  box-shadow: 10px 10px 0px #000000;
+}
+
+.cardNumber {
+  background: #FF0000;
+  background-image: 
+    radial-gradient(circle at 2px 2px, #FFFFFF 0.5px, transparent 0);
+  background-size: 8px 8px;
+  color: #FFFFFF;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 2rem 1.5rem;
+  min-width: 80px;
+  text-align: center;
+  border-right: 4px solid #000000;
+}
+
+.cardContent {
+  flex: 1;
+  padding: 1.5rem 2rem;
+}
+
+.cardTitle {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0 0 0.5rem 0;
+  color: #000000;
+  letter-spacing: 0.02em;
+}
+
+.cardDescription {
+  font-family: 'Courier New', monospace;
   font-size: 0.9rem;
-  opacity: 0.8;
-  line-height: 1.6;
+  color: #333333;
+  margin: 0;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.cardArrow {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 2rem;
+  color: #000000;
+  padding: 2rem 1.5rem;
+  background: #00FF00;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      #000000 2px,
+      #000000 3px
+    );
+  border-left: 4px solid #000000;
+  min-width: 60px;
+  text-align: center;
+}
+
+/* BRUTALIST FOOTER */
+.brutalistFooter {
+  background: #000000;
+  color: #FFFFFF;
+  margin-top: 3rem;
+}
+
+.footerDivider {
+  background: #FFFFFF;
+  background-image: 
+    radial-gradient(circle at 1px 1px, #000000 1px, transparent 0),
+    radial-gradient(circle at 5px 5px, #000000 0.5px, transparent 0);
+  background-size: 8px 8px, 16px 16px;
+  color: #000000;
+  font-family: monospace;
+  font-size: 0.8rem;
+  padding: 1rem;
+  text-align: center;
+  letter-spacing: -0.1em;
+  overflow: hidden;
+}
+
+.footerText {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 2rem;
+  margin: 0;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+}
+
+/* ADDITIONAL BRUTALIST TEXTURE EFFECTS */
+
+.brutalistCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(0,0,0,0.02) 1px,
+      rgba(0,0,0,0.02) 2px
+    );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.brutalistCard {
+  position: relative;
+}
+
+.subtitle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+  background-size: 6px 6px;
+  pointer-events: none;
+}
+
+.subtitle {
+  position: relative;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .brutalistHeader {
+    padding: 2rem 1rem;
+  }
+  
+  .mainTitle {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+  
+  .titlePart2 {
+    margin-left: 1rem;
+  }
+  
+  .brutalistGrid {
+    padding: 1rem;
+  }
+  
+  .brutalistCard {
+    flex-direction: column;
+  }
+  
+  .cardNumber,
+  .cardArrow {
+    border: none;
+    border-top: 4px solid #000000;
+    border-bottom: 4px solid #000000;
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+}
+
+/* FLOATING ANIMATION FOR CARDS */
+@keyframes floatAround {
+  0% {
+    transform: translate(-2px, -2px) rotate(0deg);
+  }
+  25% {
+    transform: translate(-6px, -6px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-6px, -2px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-2x, -8px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-2px, -2px) rotate(0deg);
+  }
 } 
