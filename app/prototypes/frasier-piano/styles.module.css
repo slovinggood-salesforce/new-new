@@ -1,0 +1,224 @@
+/* Frasier Piano - Minimalist styling inspired by the Frasier title card */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+
+.container {
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+  z-index: 1;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 50%, #2E6BA8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.7;
+  margin: 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  z-index: 1;
+}
+
+.pianoContainer {
+  margin: 2rem 0;
+}
+
+.piano {
+  position: relative;
+  width: 490px; /* 30% thinner: 700px * 0.7 = 490px */
+  height: 200px;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #000000;
+}
+
+.whiteKeys {
+  display: flex;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.whiteKey {
+  flex: 1;
+  background: #ffffff;
+  border-right: 1px solid #cccccc;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  user-select: none;
+}
+
+.whiteKey:last-child {
+  border-right: none;
+}
+
+.whiteKey:hover {
+  background: #f0f0f0;
+}
+
+.whiteKey.pressed {
+  background: #4A90E2;
+  color: #ffffff;
+}
+
+.blackKeys {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 78%; /* Extended for longer black keys */
+  z-index: 2;
+}
+
+.blackKey {
+  position: absolute;
+  width: calc(100% / 7 * 0.6);
+  height: 78%; /* 30% longer black keys */
+  background: #000000;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  user-select: none;
+}
+
+.blackKey:hover {
+  background: #333333;
+}
+
+.blackKey.pressedBlack {
+  background: #4A90E2;
+}
+
+.instructions {
+  text-align: center;
+  margin-top: 3rem;
+  max-width: 600px;
+}
+
+.instructions p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 50%, #2E6BA8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 2rem !important;
+}
+
+.footer {
+  margin-top: 4rem;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* Accessibility */
+.whiteKey:focus,
+.blackKey:focus {
+  outline: 2px solid #4A90E2;
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .piano {
+    width: 100%;
+    max-width: 350px; /* 30% thinner: 500px * 0.7 = 350px */
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .piano {
+    height: 120px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .whiteKey:hover,
+  .blackKey:hover {
+    background: inherit;
+  }
+  
+  .whiteKey:active {
+    background: #4A90E2;
+    color: #ffffff;
+  }
+  
+  .blackKey:active {
+    background: #4A90E2;
+  }
+}
